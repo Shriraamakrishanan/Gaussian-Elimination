@@ -8,10 +8,27 @@ To write a program to find the solution of a matrix using Gaussian Elimination.
 2. Anaconda – Python 3.7 Installation / Moodle-Code Runner
 
 ## Algorithm
- 1. First,we want to import numpy,then import sys,assume a variable.
- 2. For gaussian elimination method, we want to make 2nd and 3rd column zero.
- 3. For that we want to make a range accorting to our program output.
- 4. Then print the program with correct form then the output will display.
+1.Start the process and input the number of variables n.
+
+2.Create an augmented matrix a[n][n+1] and a solution array x[n].
+
+3.Input all elements of the augmented matrix a from the user.
+
+4.For each row i from 0 to n-1, check if the pivot element a[i][i] == 0. If true, print an error and stop (to avoid division by zero).
+
+5.For each row j from i+1 to n-1, compute the ratio: ratio = a[j][i] / a[i][i].
+
+6.For each column k from i to n, update the matrix element: a[j][k] = a[j][k] - ratio * a[i][k].
+
+7.After forward elimination is complete, begin back substitution starting from the last row i = n-1 to 0.
+
+8.Set x[i] = a[i][n] (the constant term of the current equation).
+
+9.For each column j from i+1 to n-1, update x[i] = x[i] - a[i][j] * x[j].
+
+10.Divide to get the final value: x[i] = x[i] / a[i][i]. 
+
+11. Print all values in x.
 ## Program:
 ```
 /*
